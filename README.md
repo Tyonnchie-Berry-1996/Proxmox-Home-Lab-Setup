@@ -1,45 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>My Project – README</title>
-  <!-- Use your existing CSS file if you already made one -->
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header class="site-header">
-    <h1>My Project</h1>
-    <p class="tagline">A prettier version of my README.md</p>
-  </header>
+## High-Level Homelab Diagram
 
-  <main class="content">
-    <article class="post">
-      <!-- START: README CONTENT (converted) -->
-      <h1>Project Name</h1>
-      <p>A short description of what this project does and who it’s for.</p>
+```mermaid
+flowchart LR
+    internet(("Internet"))
+    vpn["VPN router\n(MAC filtering + VPN)"]
+    bridge["Proxmox Linux bridge (vmbr)"]
 
-      <h2>Installation</h2>
-      <pre><code>git clone https://github.com/YOUR_USER/YOUR_REPO.git
-cd YOUR_REPO
-docker compose up -d
-</code></pre>
+    internet --> vpn --> bridge
 
-      <h2>Usage</h2>
-      <p>Explain how to run or use the app here.</p>
+    subgraph cluster_nodes["Proxmox cluster (2 nodes)"]
+        node1["Node 1 - Proxmox 8.4\nXeon E5-2680 (NUMA)"]
+        node2["Node 2 - Proxmox 8.4\nXeon E5-2680 (NUMA)"]
+    end
 
-      <h2>Configuration</h2>
-      <ul>
-        <li><code>.env</code> file options</li>
-        <li>Important environment variables</li>
-        <li>Default ports, etc.</li>
-      </ul>
+    subgraph standalone["Standalone Proxmox node"]
+        node3["Node 3 - Proxmox 8.4\nQuadro M2000 + 2.5G NIC"]
 
-      <!-- END: README CONTENT -->
-    </article>
-  </main>
+        subgraph vms["Key VMs"]
+            winvm["Windows VM\nEmulation + MT4"]
+            jellyfin["Ubuntu Jellyfin VM\nLive TV + transcode"]
+            kali["Kali Linux VM\nPrivate GPT / AI tests"]
+            filecloud["Ubuntu FileCloud VM\nCloud drive backend"]
+        end
+    end
 
-  <footer class="site-footer">
-    <p><a href="https://github.com/YOUR_USER/YOUR_REPO">View on GitHub</a></p>
-  </footer>
-</body>
-</html>
+    bridge --> cluster_nodes
+    bridge --> standalone
+
+    subgraph storage["Storage layer (~16 TB)"]
+        nfs_cluster["8 TB NFS (cluster)\nLVM: 5 TB VM/ISO + 3 TB local"]
+        nfs_external["8 TB tri-directional drive\nGUID + ext4 + NFS + cloud"]
+    end
+
+    node1 --- nfs_cluster
+    node2 --- nfs_cluster
+    node3 --- nfs_cluster
+    node3 --- nfs_external
+
+    nfs_external --> filecloud
+    nfs_external --> winvm
+    nfs_external --> jellyfin
+
+    filecloud --> clients["Clients\n(PCs, VMs, browsers via URL)"]

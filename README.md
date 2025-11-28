@@ -6,7 +6,7 @@ flowchart LR
     vpn["VPN router\n(MAC filtering + Firewall rules + Port Forwarding+ DDNS)"]
     node1["Node 1 - Proxmox 8.4\n 48 x Intel Xeon E5-2680 (NUMA) + Quadro M2000 + 2.5G NIC"]
     node2["Node 2 - Proxmox 8.4\n 4 x Intel Core i5-6500T CPU @ 2.50GHz + 8 TB NFS\nLVM: 5 TB VM/ISO + 3 TB local"]
-    bridge["Proxmox Linux bridge (vmbr) | Wired connection"]
+    bridge["Proxmox Linux bridge (vmbr) OR Wired connection"]
 
     internet --> vpn --> bridge
 
@@ -15,6 +15,7 @@ flowchart LR
     end
     bridge --> node1
     bridge --> node2
+    bridge --> node3
 
     subgraph standalone["Standalone Proxmox node"]
         node3["Node 3 - Proxmox 8.4\nQuadro M2000 + 2.5G NIC"]

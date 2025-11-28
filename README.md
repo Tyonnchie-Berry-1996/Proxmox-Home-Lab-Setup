@@ -10,3 +10,4 @@ flowchart LR
 
     subgraph standalone["Proxmox cluster (3 nodes)"]
 
+end

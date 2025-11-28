@@ -13,9 +13,6 @@ flowchart LR
 
     end
 
-        end
-    end
-
     bridge --> cluster_nodes
     bridge --> standalone
 

@@ -9,7 +9,7 @@ flowchart LR
     internet --> vpn --> bridge
 
     subgraph cluster_nodes["Proxmox cluster (2 nodes)"]
-        node1["Node 1 - Proxmox 8.4\n 48 x Intel Xeon E5-2680 (NUMA) + Quadro M2000 + 2.5G NIC""]
+        node1["Node 1 - Proxmox 8.4\n 48 x Intel Xeon E5-2680 (NUMA) + Quadro M2000 + 2.5G NIC"]
         node2["Node 2 - Proxmox 8.4\nXeon E5-2680 (NUMA)"]
     end
 

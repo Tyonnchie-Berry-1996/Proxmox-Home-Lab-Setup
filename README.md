@@ -10,8 +10,6 @@ flowchart LR
 
     internet --> vpn --> bridge
 
-    end
-
     subgraph standalone["Standalone Proxmox node"]
         node3["Node 3 - Proxmox 8.4\nQuadro M2000 + 2.5G NIC"]
 

@@ -8,14 +8,10 @@ flowchart LR
 
     internet --> vpn --> bridge
 
-    subgraph standalone["Proxmox cluster (2 nodes)"]
+    subgraph standalone["Proxmox cluster (3 nodes)"]
+        subgraph vms["Key VMs"]
 
     end
-
-    subgraph standalone["Standalone Proxmox node"]
-        
-
-        subgraph vms["Key VMs"]
 
         end
     end

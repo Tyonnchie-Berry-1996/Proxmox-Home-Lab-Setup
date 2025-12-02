@@ -1,4 +1,4 @@
-# Proxmox VE Homelab: Resource Utilization > Raw Power
+# Proxmox Homelab: Resource Utilization > Raw Power
 
 This repo documents my current homelab built around Proxmox VE 8.4. Feel free to keep the diagram up in the back ground to get a visual: https://tyonnchie-berry-1996.github.io/Proxmox-Home-Lab-Setup/
 The core idea behind this setup is simple:

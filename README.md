@@ -33,7 +33,7 @@ Instead of just throwing hardware at problems, I’m aiming to:
 - **56 logical CPUs / 2 sockets total**
 - **Hyperthreading Enable**
 - **48 of them are Intel Xeon E5-2680 @ 2.50 GHz** (NUMA-aware)
-- **~250 GB RAM**
+- **~220 GB RAM**
 
 **Storage:**
 - **Two NFS-backed storage pools** (16 TB total)

@@ -163,7 +163,8 @@ Networking is built to balance **performance, control, and security**:
     - IPTV
     - Other high-bandwidth VM use cases
   - The higher throughput made it easier to comfortably assign **~5 vCPUs per VM** without the system feeling sluggish
-
+  - With the windows machine I need more than 5 vCPUs but that is the only machine that i tune or max out resources
+  - Escpecially with PS2 emulation you have to pump up the resources
 - **VPN Router + Linux Bridge**
   - The Proxmox **Linux bridge** is wired into a **VPN router**
   - **MAC filtering** is enabled so:

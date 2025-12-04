@@ -109,7 +109,7 @@ This one is more experimental and has **three roles**:
 
 - **Cloud drive backing storage (FileCloud VM)**  
   - Inside an Ubuntu VM, I run **FileCloud**
-  - The **ext4 virtual layer** of the drive is mounted into this VM
+  - A portion of the **ext4 virtual layer** is mounted into this VM (1TB)
   - FileCloud exposes it as a 1TB **cloud drive** that can be reached from:
     - My machines on the cluster
     - My personal computers

@@ -31,7 +31,7 @@ Instead of just throwing hardware at problems, I’m aiming to:
 
 **CPU & RAM (combined):**
 - **56 logical CPUs / 2 sockets total**
-- **Hyperthreading Enable**
+- **Hyperthreading enabled**
 - **48 of them are Intel Xeon E5-2680 @ 2.50 GHz** (NUMA-aware)
 - **~220 GB RAM**
 

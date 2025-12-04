@@ -135,7 +135,7 @@ I use **GPU passthrough** on the standalone Proxmox node for multiple workloads 
 - **Ubuntu Jellyfin VM**
   - IPTV
   - Movies and Shows
-  - Works as a local netflix but instead of using netflix's servers we use our own. Local installed media (shows & moives) and I make a custom m3u playlist for        IPTV. On the backend I use NextPVR for the m3u playlist
+  - Works as a local netflix but instead of using netflix's servers we use our own. Local installed media (shows & moives) and I make a custom m3u playlist for        IPTV:https://github.com/Tyonnchie-Berry-1996/Build-Your-Own-IPTV. On the backend I use NextPVR for the m3u playlist
   - Hardware-accelerated decoding/encoding (transcoding) for media playback and IPTV
 
 - **Kali Linux VM**

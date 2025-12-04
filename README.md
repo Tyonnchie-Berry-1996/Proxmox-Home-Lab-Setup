@@ -113,7 +113,7 @@ This one is more experimental and has **three roles**:
   - FileCloud exposes it as a 1TB **cloud drive** that can be reached from:
     - My machines on the cluster
     - My personal computers
-    - Any other device that has access to the VPN rotuer and a web browser
+    - Any other device that has access to the VPN rotuer
 
 In short, this 8 TB disk acts as:
 - A local external drive
